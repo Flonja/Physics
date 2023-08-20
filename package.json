@@ -1,0 +1,21 @@
+{
+  "name": "bedbotted",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bedrock-protocol": "^3.30.0",
+    "minecraft-data": "^3.41.0",
+    "prismarine-block": "^1.17.0",
+    "prismarine-chunk": "github:Flonja/prismarine-chunk#fix/network-decode",
+    "prismarine-physics": "github:Flonja/prismarine-physics#fix/bedrock-liquids",
+    "vec3": "^0.1.8"
+  }
+}
