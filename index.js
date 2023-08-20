@@ -39,7 +39,7 @@ client.on("spawn", () => {
 
         if(playerState.teleportTicks === 0) {
             movement.send(controls);
-            physics.simulatePlayer(playerState, world).apply(player);
+            physics.simulatePlayer(playerState, world).apply(client);
         }
     }, 50); // 1 tick
 });
