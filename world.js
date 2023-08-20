@@ -20,12 +20,6 @@ module.exports = (client) => {
                 packet.block_runtime_id);
         });
         bedrockClient.on("subchunk", async (packet) => {
-            // packet.origin
-            // packet.entries[0].dx
-            // packet.entries[0].dy
-            // packet.entries[0].dz
-            // packet.entries[0].result === "success"
-            // packet.entries[0].payload
             const getOrSetSubChunk = (offset) => {
                 const X = packet.origin.x + offset.x;
                 const Y = (packet.origin.y + offset.y) >> 4;
@@ -61,6 +55,7 @@ module.exports = (client) => {
                     return Block.fromStateId(mcData.blocksByName.air.defaultState, 0);
                 }
 
+                // + 64, cuz prismarine-chunk adds 4 subchunks of padding too?
                 const b = column.getBlock({x: pos.x & 0xf, y: pos.y + 64, z: pos.z & 0xf});
                 b.position = new Vec3(pos.x, pos.y, pos.z);
                 return b;

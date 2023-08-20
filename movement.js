@@ -30,10 +30,6 @@ module.exports = (client, playerState) => {
         }
         playerState.vel.set(packet.velocity.x, packet.velocity.y, packet.velocity.z);
     });
-    client.on("add_player", packet => {
-        console.log(packet.username);
-        console.log(packet.position);
-    });
     return {
         send: (intendedMovement) => {
             const position = playerState.pos.clone().offset(0, 1.621, 0);

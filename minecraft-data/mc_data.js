@@ -176,6 +176,10 @@ module.exports = (version) => {
     mcData.attributesArray = sortArrayByKey(defaultAttributes);
     mcData.attributesByName = sortArrayByKey(defaultAttributes, "name");
     mcData.attributes = sortArrayByKey(defaultAttributes, "resource");
+
+    // Purely to show that everything after this is needed to check updated resources (like blocks)
+    if(version !== `bedrock_1.20.10`) return mcData;
+
     for (const [file, options] of Object.entries(overwritingFields)) {
         const parsed = require(path.join(__dirname, version, file));
         switch (options.method) {
