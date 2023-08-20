@@ -52,7 +52,7 @@ module.exports = (client) => {
                 pos = Object.assign({}, pos); // Cloned
                 const column = columns[`${pos.x >> 4}:${pos.z >> 4}`];
                 if (!column) {
-                    return Block.fromStateId(mcData.blocksByName.air.defaultState, 0);
+                    return Block.fromStateId(client.registry.blocksByName.air.defaultState, 0);
                 }
 
                 // + 64, cuz prismarine-chunk adds 4 subchunks of padding too?
